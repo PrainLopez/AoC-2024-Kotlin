@@ -1,11 +1,9 @@
 import kotlin.math.abs
-import kotlin.math.absoluteValue
-import kotlin.text.*
 
 fun main() {
     fun part1(input: List<String>): Int {
-        var list1 = mutableListOf<Int>()
-        var list2 = mutableListOf<Int>()
+        val list1 = mutableListOf<Int>()
+        val list2 = mutableListOf<Int>()
 
         for (line in input) {
             val splitted = line.split(("\\s+".toRegex()))
