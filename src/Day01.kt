@@ -1,23 +1,29 @@
 import kotlin.math.abs
 
 fun main() {
-    fun part1(input: List<String>): Int {
+    fun List<String>.splitIntegers(): Pair<List<Int>, List<Int>> {
         val list1 = mutableListOf<Int>()
         val list2 = mutableListOf<Int>()
 
-        for (line in input) {
-            val splitted = line.split(("\\s+".toRegex()))
+        for (line in this) {
+            val splitted = line.split("\\s+".toRegex())
 
             list1.add(splitted[0].toInt())
             list2.add(splitted[1].toInt())
         }
 
-        list1.sort()
-        list2.sort()
+        return Pair(list1.toList(), list2.toList())
+    }
+
+    fun part1(input: List<String>): Int {
+        val (list1, list2) = input.splitIntegers()
+
+        val sorted1 = list1.sorted()
+        val sorted2 = list2.sorted()
 
         var sum = 0;
         for (i in 0..input.size - 1) {
-            val distance = abs(list1[i] - list2[i])
+            val distance = abs(sorted1[i] - sorted2[i])
             sum += distance
         }
 
