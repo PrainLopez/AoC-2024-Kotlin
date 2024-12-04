@@ -26,7 +26,7 @@ fun main() {
         val sorted2 = list2.sorted()
 
         var sum = 0;
-        for (i in 0..<input.size) {
+        for (i in 0..< input.size) {
             val distance = abs(sorted1[i] - sorted2[i])
             sum += distance
         }
@@ -51,10 +51,10 @@ fun main() {
     }
 
     // Test if implementation meets criteria from the description, like:
-//    check(part1(listOf("test_input")) == 1)
+    // check(part1(listOf("test_input")) == 1)
 
     // Or read a large test input from the `src/Day01_test.txt` file:
-    val testInput = readInput("Day01_test")
+   val testInput = readInput("Day01_test")
     check(part1(testInput) == 11)
     check(part2(testInput) == 31)
 
